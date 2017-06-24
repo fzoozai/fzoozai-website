@@ -4,6 +4,7 @@ import { AppContainer } from 'react-hot-loader';
 import AppState from './AppState';
 import App from './App';
 
+// creat instance of AppState
 const appState = new AppState();
 
 render(
@@ -13,6 +14,7 @@ render(
   document.getElementById('root')
 );
 
+// get hot-reloading in project
 if (module.hot) {
   module.hot.accept('./App', () => {
     const NextApp = require('./App').default;

@@ -1,22 +1,19 @@
 import React, { Component } from 'react';
 import { observer } from 'mobx-react';
 import DevTools from 'mobx-react-devtools';
+import WelcomePage from './components/WelcomePage/WelcomePage';
+
+import store from './stores/ui-store';
 
 @observer
 class App extends Component {
   render() {
     return (
       <div>
-        <button onClick={this.onReset}>
-          Seconds passed: {this.props.appState.timer}
-        </button>
         <DevTools />
+        <WelcomePage store={store}/>
       </div>
     );
-  }
-
-  onReset = () => {
-    this.props.appState.resetTimer();
   }
 };
 
